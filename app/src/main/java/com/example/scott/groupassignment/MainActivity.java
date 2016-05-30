@@ -2,11 +2,13 @@ package com.example.scott.groupassignment;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
@@ -55,6 +57,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         l.setAdapter(change);
         l.setOnItemClickListener(this);
+
+        Button toMap = (Button) findViewById(R.id.tomap);
+
+        toMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), MapView.class);
+                startActivity(i);
+            }
+        });
+
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
