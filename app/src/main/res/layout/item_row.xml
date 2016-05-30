@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+    <TextView
+        android:id="@+id/row_name"
+        android:layout_width="0dp"
+        android:layout_weight=".70"
+        android:layout_height="50dp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:background="@drawable/back"
+        android:text="Jacko's Burgers" />
+
+    <TextView
+        android:id="@+id/row_distance"
+        android:layout_width="0dp"
+        android:layout_weight=".30"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:textColor="#000000"
+        android:text="XX.X KM"
+        android:background="@drawable/back" />
+</LinearLayout>

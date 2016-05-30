@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgcolor">
+
+    <TextView
+        android:id="@+id/store_name"
+        android:layout_width="300dp"
+        android:layout_height="36dp"
+        android:gravity="left"
+        android:textSize="32sp"
+        android:paddingLeft="20dp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:text="Jacko's Burgers"
+        />
+
+    <TextView
+        android:id="@+id/store_website"
+        android:layout_width="300dp"
+        android:layout_height="24dp"
+        android:gravity="left"
+        android:textSize="20dp"
+        android:paddingLeft="20dp"
+        android:textColor="#333333"
+        android:textStyle="bold"
+        android:text="website: www.jurgers.com"
+        />
+
+    <TextView
+        android:id="@+id/store_pickles"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:gravity="left"
+        android:textSize="26dp"
+        android:paddingLeft="20dp"
+        android:textColor="#114411"
+        android:textStyle="bold"
+        android:text="Pickles: 4.5/5"
+        />
+
+    <ImageView
+        android:id="@+id/store_image"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/examplestore"
+        android:background="@drawable/back"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="40dp"
+        android:textSize="24dp"
+        android:background="#448844"
+        android:text="GET DIRECTIONS"
+        android:id="@+id/button" />
+
+</LinearLayout>
