@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bgcolor">
+    android:background="@drawable/bglayout">
 
     <TextView
         android:id="@+id/store_name"
@@ -19,7 +19,7 @@
     <TextView
         android:id="@+id/store_website"
         android:layout_width="300dp"
-        android:layout_height="24dp"
+        android:layout_height="26dp"
         android:gravity="left"
         android:textSize="20dp"
         android:paddingLeft="20dp"
@@ -43,8 +43,10 @@
     <ImageView
         android:id="@+id/store_image"
         android:layout_width="250dp"
-        android:layout_height="200dp"
+        android:layout_height="188dp"
         android:layout_marginLeft="20dp"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
         android:src="@drawable/examplestore"
         android:background="@drawable/back"/>
 
@@ -56,8 +58,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginLeft="40dp"
         android:textSize="24dp"
-        android:background="#448844"
+        android:background="@drawable/buttonback"
         android:text="GET DIRECTIONS"
         android:id="@+id/button" />
-
 </LinearLayout>
