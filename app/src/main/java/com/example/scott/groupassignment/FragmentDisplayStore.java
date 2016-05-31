@@ -1,6 +1,8 @@
 package com.example.scott.groupassignment;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -43,6 +45,24 @@ public class FragmentDisplayStore extends Fragment
                 getFragmentManager().popBackStack();
                 View v1 = (View) getActivity().findViewById(R.id.fadeBackground);
                 v1.setVisibility(View.GONE);
+            }
+        });
+
+
+        Button rateBut = (Button) v.findViewById(R.id.ratebutton);
+
+        rateBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager FM = getFragmentManager();
+                FragmentTransaction FT = FM.beginTransaction();
+                FragmentDisplayRating F2 = new FragmentDisplayRating();
+
+                if (getFragmentManager().findFragmentById(R.id.fr_display_rating) == null) {
+                    FT.add(R.id.fr_display_rating, F2);
+                    FT.addToBackStack("fr_rating");
+                }
+                FT.commit();
             }
         });
         return v;
