@@ -3,13 +3,10 @@ package com.example.scott.groupassignment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
-<<<<<<< HEAD
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-=======
 import android.content.pm.PackageManager;
 import android.graphics.Color;
->>>>>>> refs/remotes/origin/Jackson
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v4.app.ActivityCompat;
@@ -48,13 +45,11 @@ import java.util.List;
 public class MainActivity extends FragmentActivity implements AdapterView.OnItemClickListener {
 
     private Bundle bundle;
-    GoogleMap map;
-    ArrayList<LatLng> markerPoints;
-    TextView tvDistanceDuration;
+    private GoogleMap map;
+    private ArrayList<LatLng> markerPoints;
+    private TextView tvDistanceDuration;
 
     protected static boolean isMainShown = false;
-
-    private Bundle bundle;
 
     private List<storeList> test;
     /**
@@ -76,8 +71,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
         test.add(new storeList(3, "Big snacks", 2.7, "www.bigsnacks.com", 3.2));
 
         //testing lots of data
-        for(int i = 0; i < 50; i++)
-        {
+        for (int i = 0; i < 50; i++) {
             test.add(new storeList(0, "Dummy Data", i, "www.bedsite.com", 1));
         }
 
@@ -103,8 +97,8 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+    }
 
-<<<<<<< HEAD
     private void sortList(List<storeList> list)
     {
         for(int i = 0; i < list.size(); i++)
@@ -126,7 +120,6 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
         list.set(j, temp);
     }
 
-=======
         /*tvDistanceDuration = (TextView) findViewById(R.id.tv_distance_time);
         markerPoints = new ArrayList<LatLng>();// Initializing
 
@@ -172,8 +165,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
                 }
             }
         });*/
-    }
->>>>>>> refs/remotes/origin/Jackson
+
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
