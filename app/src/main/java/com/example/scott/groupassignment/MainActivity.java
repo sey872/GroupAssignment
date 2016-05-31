@@ -3,6 +3,8 @@ package com.example.scott.groupassignment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,10 +23,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
-    private static boolean isHelpShown = false;
-    protected static boolean isInfoShown = false;
     protected static boolean isMainShown = false;
-    private static boolean isViewShown = false;
+
+    private Bundle bundle;
 
     private List<storeList> test;
     /**
@@ -48,8 +49,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         //testing lots of data
         for(int i = 0; i < 50; i++)
         {
-            test.add(new storeList(0, "Dummy Data", 3.4+i, "www.bedsite.com", 1));
+            test.add(new storeList(0, "Dummy Data", i, "www.bedsite.com", 1));
         }
+
+        sortList(test);
 
         ListView l = (ListView) findViewById(R.id.listView);
 
@@ -73,7 +76,27 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
-    private Bundle bundle;
+    private void sortList(List<storeList> list)
+    {
+        for(int i = 0; i < list.size(); i++)
+        {
+            for(int j = i; j < list.size(); j++)
+            {
+                if(list.get(i).getDistance() > list.get(j).getDistance())
+                {
+                    swap(list, i, j);
+                }
+            }
+        }
+    }
+
+    private void swap(List<storeList> list, int i, int j)
+    {
+        storeList temp = list.get(i);
+        list.set(i, list.get(j));
+        list.set(j, temp);
+    }
+
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
