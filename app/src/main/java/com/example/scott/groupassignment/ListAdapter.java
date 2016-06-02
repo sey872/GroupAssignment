@@ -47,7 +47,7 @@ public class ListAdapter extends ArrayAdapter<storeList> {
             }
 
             if (tt2 != null) {
-                tt2.setText(String.valueOf(p.getDistance()));
+                tt2.setText(String.valueOf(p.getDistance()) + "KM");
             }
         }
         return v;

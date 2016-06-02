@@ -1,20 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:clickable="true"
     android:layout_height="match_parent"
-    android:background="@drawable/bglayout">
+    android:background="@drawable/bglayout"
+    android:weightSum="1"
+    >
 
-    <TextView
-        android:id="@+id/store_name"
-        android:layout_width="300dp"
-        android:layout_height="36dp"
-        android:gravity="left"
-        android:textSize="32sp"
-        android:paddingLeft="20dp"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        android:text="Jacko's Burgers"
-        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/store_name"
+            android:layout_width="270dp"
+            android:layout_height="50dp"
+            android:gravity="left"
+            android:textSize="32sp"
+            android:paddingLeft="20dp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:text="Jacko's Burgers"
+            />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="X"
+            android:textStyle="bold"
+            android:textSize="24dp"
+            android:id="@+id/xbutton"
+            android:background="@drawable/xbuttonback"
+            android:layout_gravity="right" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/store_website"
@@ -28,22 +48,40 @@
         android:text="website: www.jurgers.com"
         />
 
-    <TextView
-        android:id="@+id/store_pickles"
-        android:layout_width="300dp"
-        android:layout_height="30dp"
-        android:gravity="left"
-        android:textSize="26dp"
-        android:paddingLeft="20dp"
-        android:textColor="#114411"
-        android:textStyle="bold"
-        android:text="Pickles: 4.5/5"
-        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/store_pickles"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:gravity="left"
+            android:textSize="26dp"
+            android:paddingLeft="20dp"
+            android:textColor="#114411"
+            android:textStyle="bold"
+            android:text="Pickles: 4.5/5"
+            />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="34dp"
+            android:text="RATE"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:id="@+id/ratebutton"
+            android:background="@drawable/listviewback"
+            android:layout_gravity="right" />
+
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/store_image"
         android:layout_width="250dp"
         android:layout_height="188dp"
+        android:layout_marginTop="5dp"
         android:layout_marginLeft="20dp"
         android:paddingLeft="2dp"
         android:paddingRight="2dp"
@@ -55,10 +93,12 @@
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="8dp"
         android:layout_marginLeft="40dp"
         android:textSize="24dp"
         android:background="@drawable/buttonback"
         android:text="GET DIRECTIONS"
-        android:id="@+id/button" />
+        android:id="@+id/getdirbutteon" />
+
+
 </LinearLayout>

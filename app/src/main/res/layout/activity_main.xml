@@ -70,7 +70,18 @@
     <RelativeLayout
         android:id="@+id/fr_display_store"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="380dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fr_display_rating"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
