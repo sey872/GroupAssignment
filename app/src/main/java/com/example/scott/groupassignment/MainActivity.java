@@ -63,7 +63,10 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        test = new ArrayList<>();
+        Intent i = new Intent(getApplicationContext(), MapsActivity.class);
+        startActivity(i);
+
+        /*test = new ArrayList<>();
 
         test.add(new storeList(0, "Bob's Burgers", 2.4, "www.bobislife.com", 4.5));
         test.add(new storeList(1, "Your burgers", 2.5, "www.yourburgers.com", 3.8));
@@ -96,10 +99,10 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();*/
     }
 
-    private void sortList(List<storeList> list)
+    /*private void sortList(List<storeList> list)
     {
         for(int i = 0; i < list.size(); i++)
         {
@@ -164,10 +167,10 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
                     downloadTask.execute(url);// Start downloading json data from Google Directions API
                 }
             }
-        });*/
+        });
 
 
-    @Override
+    */@Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
         FragmentManager FM = getFragmentManager();
@@ -187,7 +190,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
             FT.addToBackStack("fr_store");
         }
         FT.commit();
-    }
+    }/*
 
     @Override
     public void onBackPressed() {
@@ -212,7 +215,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client.connect();
+        //client.connect();
         Action viewAction = Action.newAction(
                 Action.TYPE_VIEW, // TODO: choose an action type.
                 "Main Page", // TODO: Define a title for the content shown.
@@ -340,10 +343,6 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
             MainActivity.ParserTask parserTask = new MainActivity.ParserTask();
             parserTask.execute(result); //Invokes the thread for parsing the JSON data
         }
-
-        /**
-         * A method to download json data from url
-         */
         private String downloadUrl(String strUrl) throws IOException {
             String data = "";
             InputStream iStream = null;
@@ -383,5 +382,5 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
         String output = "json";// Output format
         String url = "https://maps.googleapis.com/maps/api/directions/" + output + "?" + parameters; // Building the url to the web service
         return url;
-    }
+    }*/
 }
