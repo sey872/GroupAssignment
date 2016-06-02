@@ -51,7 +51,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
 
     protected static boolean isMainShown = false;
 
-    private List<storeList> test;
+    private List<storeList> store;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -63,46 +63,51 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent i = new Intent(getApplicationContext(), MapsActivity.class);
-        startActivity(i);
-
-        /*test = new ArrayList<>();
-
-        test.add(new storeList(0, "Bob's Burgers", 2.4, "www.bobislife.com", 4.5));
-        test.add(new storeList(1, "Your burgers", 2.5, "www.yourburgers.com", 3.8));
-        test.add(new storeList(2, "Real Burgers", 2.6, "www.thisisarealsite.com", 1.1));
-        test.add(new storeList(3, "Big snacks", 2.7, "www.bigsnacks.com", 3.2));
-
-        //testing lots of data
-        for (int i = 0; i < 50; i++) {
-            test.add(new storeList(0, "Dummy Data", i, "www.bedsite.com", 1));
+        store = new ArrayList<>();
+        InputStream in;
+        BufferedReader reader;
+        String line;
+        List<String> list = new ArrayList<>();
+        int num = 0;
+        try {
+            in = this.getAssets().open("places.txt");
+            reader = new BufferedReader(new InputStreamReader(in));
+            while((line = reader.readLine()) != null)
+            {
+                list.add(line);
+                String[] parts = line.split(",");
+                store.add(new storeList(num++, parts[0], 2.4, parts[1], 4.5, Double.parseDouble(parts[2]), Double.parseDouble(parts[3])));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
-        sortList(test);
 
         ListView l = (ListView) findViewById(R.id.listView);
 
-        ListAdapter change = new ListAdapter(this, R.layout.item_row, test);
+        ListAdapter change = new ListAdapter(this, R.layout.item_row, store);
 
         l.setAdapter(change);
         l.setOnItemClickListener(this);
 
         Button toMap = (Button) findViewById(R.id.tomap);
 
+        final List<String> toPass = list;
+
         toMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), MapView.class);
+                Intent i = new Intent(getApplicationContext(), MapsActivity.class);
+                i.putStringArrayListExtra("stores", (ArrayList<String>) toPass);
                 startActivity(i);
             }
         });
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();*/
+        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
-    /*private void sortList(List<storeList> list)
+    private void sortList(List<storeList> list)
     {
         for(int i = 0; i < list.size(); i++)
         {
@@ -178,9 +183,9 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
         FragmentDisplayStore F2 = new FragmentDisplayStore();
 
         bundle = new Bundle();
-        bundle.putString("name", test.get(position).getName());
-        bundle.putString("website", test.get(position).getWebsite());
-        bundle.putDouble("rating", test.get(position).getRating());
+        bundle.putString("name", store.get(position).getName());
+        bundle.putString("website", store.get(position).getWebsite());
+        bundle.putDouble("rating", store.get(position).getRating());
         F2.setArguments(bundle);
 
         if (getFragmentManager().findFragmentById(R.id.fr_display_store) == null) {

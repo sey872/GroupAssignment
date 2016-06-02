@@ -3,6 +3,8 @@ package com.example.scott.groupassignment;
 import android.os.Environment;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -16,16 +18,41 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.Reader;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private List<storeList> store;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps);
+        setContentView(R.layout.map_view);
+
+        ArrayList<String> pass = getIntent().getStringArrayListExtra("stores");
+
+        store = new ArrayList<>();
+
+        for(int i = 0; i < pass.size(); i++)
+        {
+            String[] parts = pass.get(i).split(",");
+            store.add(new storeList(i, parts[0], 2.4, parts[1], 4.5, Double.parseDouble(parts[2]), Double.parseDouble(parts[3])));
+        }
+
+        Button toList = (Button) findViewById(R.id.tolist);
+
+        toList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -55,54 +82,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
-//Get the text file
-        //File file = new File("assets/places.txt");
+
         mMap = googleMap;
+
         mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(-33.867, 151.206)));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(-33.863942,151.21192)).title("Bar Luca").snippet("Website: http://barluca.com.au/").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
-        /*String tempName = "";
-        String tempWeb = "";
-        double tempLat, tempLong;
-        BufferedReader in = null;
-        try
-        {
-            in = new BufferedReader(new FileReader(file));
-            String temp = "";
-            while (true)
-            {
-                temp = in.readLine();
-                tempName = temp;
-                temp = in.readLine();
-                tempWeb = temp;
-                temp = in.readLine();
-                String[] str_array = temp.split(":");
-                tempLat = Double.parseDouble(str_array[0]);
-                tempLong = Double.parseDouble(str_array[1]);
-                System.out.println("GABERLAD= " + tempName + " : " + tempWeb + " : " + tempLat + "," + tempLong);
 
-                mMap.addMarker(new MarkerOptions().position(new LatLng(tempLat,tempLong)).title(tempName).snippet("Website: " + tempWeb).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
-                in.readLine();
-                if (temp == null) break;
-            }
-        } catch (IOException e) {
-            System.out.println("There was a problem: " + e);
-            e.printStackTrace();
+        for(int i = 0; i < store.size(); i++)
+        {
+            mMap.addMarker(new MarkerOptions().position(new LatLng(store.get(i).getLatitude(), store.get(i).getLongitude())).title(store.get(i).getName()).snippet(store.get(i).getWebsite()).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
         }
-        finally
-        {
-            try
-            {
-                in.close();
-            }
-            catch (Exception e)
-            {
-
-            }
-        }*/
-        // Add a marker in Sydney and move the camera
-        //mMap.addMarker(new MarkerOptions().position(new LatLng(-33.867, 151.206)).title("Marker in Sydney").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
-        //mMap.addMarker(new MarkerOptions().position(new LatLng()).title("Melbourne").snippet("Website: " + tempWeb).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
-
-
+        //Zomato,https://www.zomato.com/sydney/restaurants/burger?page=3http://itouchmap.com/latlong.html
     }
 }
