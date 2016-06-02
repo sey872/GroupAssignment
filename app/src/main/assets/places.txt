@@ -1,52 +1,52 @@
-Bar Luca,http://barluca.com.au/,-33.863942,151.21192
-Chur Burgers,http://www.churburger.com.au/,-33.882257, 151.210243
-Five Points Burgers,https://www.facebook.com/Five-Points-Burger-352136928329438/,-33.83733,151.208873
-Burger Project,http://burgerproject.com/,-33.876524,151.206186
-Pub Life Kitchen,http://publifekitchen.com/,-33.876596,151.196677
-Mister Gee Burger Truck,https://www.facebook.com/MisterGeeBurgerTruck/,-33.87462,151.128314
-Mary's,https://www.zomato.com/sydney/marys-1-cbd,-33.872148,151.209535
-Stitch,http://www.stitchbar.com/bar/,-33.867461,151.205654
-Bare Grill,http://baregrillandcafe.com/,-33.987955,151.232722
-Hotel Chambers,http://www.hotelchambers.com.au/,-33.867935,151.210907
-Moo Gourmet Burgers,https://www.moogourmetburgers.com.au/,-33.895581,151.181946
-B L Burgers,http://blburgers.com.au/,-33.880225,151.215766
-Bonarche Burgers,http://www.bonarche.com/,-33.8875,151.157254
-Paul's Famous Hamburgers,http://paulsfamoushamburgers.com.au/,-34.006772,151.112478
-Jack's Newtown,http://jacksnewtown.com/,-33.89321,151.183433
-Lord Wolseley Hotel,http://www.lordwolseleyhotel.com.au/,-33.876596,151.196677
-Burgers by Josh,http://www.burgersbyjosh.com/,-33.840565,151.207851
-Vic's Meat Market,http://www.vicsmeatmarket.com.au/,-33.870426,151.190186
-GoodTime Burgers,http://theeastern.com.au/goodtimeburgers,-33.891039,151.248469
-Dean's Diner,https://www.facebook.com/deansdinernewtown/,-33.899512,151.177589
-Grill'd,http://www.grilld.com.au/,-33.817627,151.002145
-The Burger Joint,http://theburgerjoint.com.au/,-33.878397,151.221076
-Soul Burger,http://www.soulburger.com.au/,-33.919929,151.242926
-The Hub House Diner,http://www.thehubhousediner.com.au/,-33.903676,151.142109
-Miss America's Pop-up Diner,https://www.facebook.com/Miss-Americas-Pop-up-Diner-1508631979414581/,-33.952416,151.052318
-BenBry Burgers,http://www.benbryburgersmanly.com/,-33.797279,151.286732
-Oxford Tavern,http://theoxfordtavern.com.au/,-33.895448,151.156704
-Beejay's,https://www.facebook.com/beejayscafebar/,-33.915156,151.152046
-BurgerFuel,http://www.au.burgerfuel.com/,-33.894183,151.183115
-Rocks Brewing Company,http://www.rocksbrewing.com,-33.916087,151.191458
-Milky Lane,https://www.facebook.com/milkylanebondi/,-33.889123,151.274181
-Opera Kitchen,http://www.operakitchen.com.au/,-33.861858,151.210546
-The Tuckshop,http://tuckshopcoffee.com.au/,-33.698179,151.001132
-Charlie & Co Burgers,http://www.charlieandco.com.au/,-33.870142,151.208847
-Abby's Beer 'n' Burgers,https://www.facebook.com/abbysbeernburgers/,-33.729636,151.162391
-Burger Barrel,https://www.facebook.com/Burger-Barrel-1447675028892124/,-33.920854,151.254735
-Meat District Co.,http://www.meatdistrictco.com.au/,-33.866867,151.200928
-Hayberry Bar & Diner,http://www.thehayberry.com.au/,-33.824033,151.201225
-Out of the Blue,https://www.facebook.com/outoftheblueclovelly/,-33.912159,151.258508
-D'Munchies,https://www.facebook.com/D.munchies/,-33.894148,151.183178
-Trinity Bar & Bistro,http://www.trinitybar.com.au/,-33.888584,151.213144
-Belfield on Botany,https://www.facebook.com/belfieldonbotany/,-33.918411,151.200033
-Pablo's Charcoal Chicken & Ribs,http://pabloschicken.wix.com/surryhills,-33.891328,151.213101
-Crisp CBD,http://www.thecrisp.com.au/,-33.875858,151.208063
-Bonditony's Burger Joint,http://www.bonditonysburgerjoint.com/,-33.888407,151.271299
-Ribs & Burgers,http://ribsandburgers.com/au/,-33.868283,151.194422
-The Stuffed Beaver Diner,http://stuffedbeaver.com.au/,-33.894802,151.268031
-Funky Monkey Cafe,https://www.facebook.com/Funky-Monkey-cafe-at-Newtown-140372392648120/,-33.902436,151.179431
-Danno's Cafe,https://www.facebook.com/DannosCafe/,-33.753089,151.288509
+Bar Luca,barluca.com.au/,-33.863942,151.21192
+Chur Burgers,churburger.com.au/,-33.882257, 151.210243
+Five Points Burgers,facebook.com/Five-Points-Burger-352136928329438/,-33.83733,151.208873
+Burger Project,burgerproject.com/,-33.876524,151.206186
+Pub Life Kitchen,publifekitchen.com/,-33.876596,151.196677
+Mister Gee Burger Truck,facebook.com/MisterGeeBurgerTruck/,-33.87462,151.128314
+Mary's,zomato.com/sydney/marys-1-cbd,-33.872148,151.209535
+Stitch,stitchbar.com/bar/,-33.867461,151.205654
+Bare Grill,baregrillandcafe.com/,-33.987955,151.232722
+Hotel Chambers,hotelchambers.com.au/,-33.867935,151.210907
+Moo Gourmet Burgers,moogourmetburgers.com.au/,-33.895581,151.181946
+B L Burgers,blburgers.com.au/,-33.880225,151.215766
+Bonarche Burgers,bonarche.com/,-33.8875,151.157254
+Paul's Famous Hamburgers,paulsfamoushamburgers.com.au/,-34.006772,151.112478
+Jack's Newtown,jacksnewtown.com/,-33.89321,151.183433
+Lord Wolseley Hotel,lordwolseleyhotel.com.au/,-33.876596,151.196677
+Burgers by Josh,burgersbyjosh.com/,-33.840565,151.207851
+Vic's Meat Market,vicsmeatmarket.com.au/,-33.870426,151.190186
+GoodTime Burgers,theeastern.com.au/goodtimeburgers,-33.891039,151.248469
+Dean's Diner,facebook.com/deansdinernewtown/,-33.899512,151.177589
+Grill'd,grilld.com.au/,-33.817627,151.002145
+The Burger Joint,theburgerjoint.com.au/,-33.878397,151.221076
+Soul Burger,soulburger.com.au/,-33.919929,151.242926
+The Hub House Diner,thehubhousediner.com.au/,-33.903676,151.142109
+Miss America's Pop-up Diner,https://facebook.com/Miss-Americas-Pop-up-Diner-1508631979414581/,-33.952416,151.052318
+BenBry Burgers,benbryburgersmanly.com/,-33.797279,151.286732
+Oxford Tavern,theoxfordtavern.com.au/,-33.895448,151.156704
+Beejay's,https://facebook.com/beejayscafebar/,-33.915156,151.152046
+BurgerFuel,au.burgerfuel.com/,-33.894183,151.183115
+Rocks Brewing Company,rocksbrewing.com,-33.916087,151.191458
+Milky Lane,https://facebook.com/milkylanebondi/,-33.889123,151.274181
+Opera Kitchen,operakitchen.com.au/,-33.861858,151.210546
+The Tuckshop,tuckshopcoffee.com.au/,-33.698179,151.001132
+Charlie & Co Burgers,charlieandco.com.au/,-33.870142,151.208847
+Abby's Beer 'n' Burgers,https://facebook.com/abbysbeernburgers/,-33.729636,151.162391
+Burger Barrel,https://facebook.com/Burger-Barrel-1447675028892124/,-33.920854,151.254735
+Meat District Co.,meatdistrictco.com.au/,-33.866867,151.200928
+Hayberry Bar & Diner,thehayberry.com.au/,-33.824033,151.201225
+Out of the Blue,https://facebook.com/outoftheblueclovelly/,-33.912159,151.258508
+D'Munchies,https://facebook.com/D.munchies/,-33.894148,151.183178
+Trinity Bar & Bistro,trinitybar.com.au/,-33.888584,151.213144
+Belfield on Botany,https://facebook.com/belfieldonbotany/,-33.918411,151.200033
+Pablo's Charcoal Chicken & Ribs,pabloschicken.wix.com/surryhills,-33.891328,151.213101
+Crisp CBD,thecrisp.com.au/,-33.875858,151.208063
+Bonditony's Burger Joint,bonditonysburgerjoint.com/,-33.888407,151.271299
+Ribs & Burgers,ribsandburgers.com/au/,-33.868283,151.194422
+The Stuffed Beaver Diner,stuffedbeaver.com.au/,-33.894802,151.268031
+Funky Monkey Cafe,https://facebook.com/Funky-Monkey-cafe-at-Newtown-140372392648120/,-33.902436,151.179431
+Danno's Cafe,https://facebook.com/DannosCafe/,-33.753089,151.288509
 Inferno Grill & Cafe,https://infernogrill.com.au/,-33.943486,151.240306
-Assembly Bar,http://www.assemblybar.com.au/,-33.874889,151.20537
-Macelleria,http://www.macelleria.com.au/,-33.891289,151.273481
+Assembly Bar,assemblybar.com.au/,-33.874889,151.20537
+Macelleria,macelleria.com.au/,-33.891289,151.273481
