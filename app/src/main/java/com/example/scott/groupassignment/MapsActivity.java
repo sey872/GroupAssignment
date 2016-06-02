@@ -1,8 +1,11 @@
 package com.example.scott.groupassignment;
 
+import android.content.pm.PackageManager;
+import android.location.Location;
 import android.os.Environment;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.Button;
 
@@ -68,6 +71,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         point.toString()));
             }
         });*/
+
+
     }
 
 
@@ -85,7 +90,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         mMap = googleMap;
 
+        /*  MY LOCATION ATTEMPT
+
+        mMap.setMyLocationEnabled(true);
+
+        mMap.setOnMyLocationChangeListener(new GoogleMap.OnMyLocationChangeListener() {
+
+            @Override
+            public void onMyLocationChange(Location arg0) {
+                // TODO Auto-generated method stub
+                mMap.addMarker(new MarkerOptions().position(new LatLng(arg0.getLatitude(), arg0.getLongitude())).title("It's Me!").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+            }
+        });*/
+
         mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(-33.867, 151.206)));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(-33.867, 151.206), 10.0f));
 
         for(int i = 0; i < store.size(); i++)
         {
