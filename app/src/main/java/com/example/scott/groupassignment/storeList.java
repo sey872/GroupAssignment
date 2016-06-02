@@ -16,6 +16,9 @@ public class storeList {
     //Name of Restaurant
     private String name;
 
+    private double latitude;
+    private double longitude;
+
     //Distance Away From Restaurant
     private Double distance;
 
@@ -25,13 +28,15 @@ public class storeList {
     //Rating
     private double rating;
 
-    public storeList(int id, String name, double distance, String website, double rating)
+    public storeList(int id, String name, double distance, String website, double rating, double latitude, double longitude)
     {
         this.id = id;
         this.name = name;
         this.distance = distance;
         this.website = website;
         this.rating = rating;
+        this.longitude = longitude;
+        this.latitude = latitude;
     }
 
     public storeList() {
@@ -40,6 +45,16 @@ public class storeList {
         distance = 999.9;
         website = "no website listed";
         rating = 0;
+        latitude = 0;
+        longitude = 0;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 
     public void setDistance(Double distance) {
@@ -76,6 +91,14 @@ public class storeList {
 
     public String getWebsite() {
         return website;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
     }
 
     public double getRating() {
