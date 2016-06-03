@@ -1,11 +1,18 @@
-Group Leader: Jackson Collins
+GROUP LEADER: Jackson Collins
 
-Students
+STUDENTS
 Name:Jackson Collins
+User:jrc772
 Email:jrc772@uowmail.edu.au
 
 Name:Scott Young
+User:sey872
 Email:sey872@uowmail.edu.au
+
+
+
+
+CODE
 
 MainActivity.java
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id)
@@ -59,5 +66,8 @@ ListAdapter.java
 
 
 
-Application is MIN API 19 
+	
+RUNNING APPLICATION:	
+	
+Application is set for MIN API 19 
 

@@ -30,7 +30,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
     private Bundle bundle;
     private GoogleMap map;
     protected static boolean isMainShown = false;
-
+    private boolean isHidden = false;
 
     private List<storeList> store;
 
@@ -51,8 +51,9 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
         int num = 0;
 
         final SupportMapFragment fm = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        if(fm != null) {
+        if(isHidden == false) {
             fm.getView().setVisibility(View.GONE);
+            isHidden = true;
         }
 
         // Getting Map for the SupportMapFragment
@@ -81,9 +82,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
             map = null;
         }
         */
-
-        System.out.println("your lat is: " + latitude);
-        System.out.println("your long is: " + longitude);
+        
         try {
             in = this.getAssets().open("places.txt");
             reader = new BufferedReader(new InputStreamReader(in));
