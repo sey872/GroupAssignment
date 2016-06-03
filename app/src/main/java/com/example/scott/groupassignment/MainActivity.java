@@ -117,7 +117,8 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
                 if (ratings != null) {
                     finalRating = getRating(ratings);
                 }
-                double dist = getDistance(Double.parseDouble(parts[2]), latitude, Double.parseDouble(parts[3]), longitude);
+                double dist = getDistance(longitude, latitude, Double.parseDouble(parts[3]), Double.parseDouble(parts[2]));
+
                 store.add(new storeList(num++, parts[0], dist, parts[1], finalRating, Double.parseDouble(parts[2]), Double.parseDouble(parts[3])));
             }
         } catch (IOException e) {
@@ -425,9 +426,16 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
 
     private double getDistance(double x1, double y1, double x2, double y2)
     {
-        double distance = Math.sqrt(Math.pow(x2-x1,2)+Math.pow(y2-y1,2));
-        return distance;
+        double d2r = Math.PI / 180;
+        double dLong = (x2 - x1) * d2r;
+        double dLat = (y2 - y1) * d2r;
+        double a = Math.pow(Math.sin(dLat / 2.0), 2) + Math.cos(y1 * d2r)
+                * Math.cos(y2 * d2r) * Math.pow(Math.sin(dLong / 2.0), 2);
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        double d = 6367000 * c;
+        return Math.round(d);
     }
+
 
     private void swap(List<storeList> list, int i, int j)
     {
