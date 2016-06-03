@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -167,6 +168,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
                         options.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
                     }
 
+
                     // Add new marker to the Google Map Android API V2
                     map.addMarker(options);
 
@@ -175,14 +177,18 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
                         LatLng origin = markerPoints.get(0);
                         LatLng dest = markerPoints.get(1);
 
+                        System.out.println("TEST1 = " + origin + " - " + dest);
+
                         // Getting URL to the Google Directions API
-                        String url = getDirectionsUrl(origin, dest);
+                        String url = getDirectionsUrl(origin, dest);//
+                        System.out.println("TEST2 = " + url);
 
                         DownloadTask downloadTask = new DownloadTask();
 
                         // Start downloading json data from Google Directions API
                         downloadTask.execute(url);
                     }
+
                 }
             });
         }
@@ -195,6 +201,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
 
         // Destination of route
         String str_dest = "destination="+dest.latitude+","+dest.longitude;
+
 
         // Sensor enabled
         String sensor = "sensor=false";
@@ -210,6 +217,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
 
         return url;
     }
+
     /** A method to download json data from url */
     private String downloadUrl(String strUrl) throws IOException{
         String data = "";
@@ -229,10 +237,10 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
 
             BufferedReader br = new BufferedReader(new InputStreamReader(iStream));
 
-            StringBuffer sb = new StringBuffer();
+            StringBuffer sb  = new StringBuffer();
 
             String line = "";
-            while( ( line = br.readLine()) != null){
+            while( ( line = br.readLine())  != null){
                 sb.append(line);
             }
 
@@ -241,13 +249,15 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
             br.close();
 
         }catch(Exception e){
-            Log.d("Bad url", e.toString());
+            Log.d("bad url", e.toString());
         }finally{
             iStream.close();
             urlConnection.disconnect();
         }
         return data;
     }
+
+
 
     // Fetches data from url passed
     private class DownloadTask extends AsyncTask<String, Void, String>{
@@ -278,6 +288,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
 
             // Invokes the thread for parsing the JSON data
             parserTask.execute(result);
+
         }
     }
 
@@ -324,7 +335,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
 
                     double lat = Double.parseDouble(point.get("lat"));
                     double lng = Double.parseDouble(point.get("lng"));
-                    LatLng position = new LatLng(lat, lng);
+                    LatLng position = new LatLng(i, i*5);
 
                     points.add(position);
                 }
@@ -333,10 +344,11 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
                 lineOptions.addAll(points);
                 lineOptions.width(2);
                 lineOptions.color(Color.RED);
-            }
 
+            }
+            if(lineOptions != null)
             // Drawing polyline in the Google Map for the i-th route
-            map.addPolyline(lineOptions);
+                map.addPolyline(lineOptions);
         }
     }
 
