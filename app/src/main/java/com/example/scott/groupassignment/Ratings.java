@@ -60,7 +60,7 @@ public class Ratings {
     public Ratings()
     {
         toGet = "all";
-        startUrl = "http://myjson.com/54mwi";
+        startUrl = "https://api.myjson.com/bins/54mwi";
 
         store = new ArrayList<>();
         performNASARequest();
@@ -133,7 +133,6 @@ public class Ratings {
                     while ((line = reader.readLine()) != null) {
                         stringBuilder.append(line + "\n");
                     }
-                    System.out.print(stringBuilder.toString());
 
                     JSONArray jArray = null;
                     try {
