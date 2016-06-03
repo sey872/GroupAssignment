@@ -1,13 +1,18 @@
 package com.example.scott.groupassignment;
 
 
+import com.google.android.gms.identity.intents.Address;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by Scott on 5/5/2016.
  * For CSCI342 Assignment 2
  */
+
 public class storeList {
 
     //Restaurant ID
@@ -18,6 +23,7 @@ public class storeList {
 
     private double latitude;
     private double longitude;
+    private String address;
 
     //Distance Away From Restaurant
     private Double distance;

@@ -1,6 +1,7 @@
 package com.example.scott.groupassignment;
 
 import android.content.pm.PackageManager;
+import android.location.Geocoder;
 import android.location.Location;
 import android.os.Environment;
 import android.support.v4.app.FragmentActivity;
@@ -9,6 +10,7 @@ import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.gms.identity.intents.Address;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -26,6 +28,7 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -105,7 +108,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(-33.867, 151.206)));
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(-33.867, 151.206), 10.0f));
-
+        Geocoder geocoder = new Geocoder(this, Locale.getDefault());
+        Address tempAddress;
         for(int i = 0; i < store.size(); i++)
         {
             mMap.addMarker(new MarkerOptions().position(new LatLng(store.get(i).getLatitude(), store.get(i).getLongitude())).title(store.get(i).getName()).snippet(store.get(i).getWebsite()).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
