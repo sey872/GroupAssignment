@@ -4,13 +4,23 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 /**
  * Created by Scott on 5/5/2016.
@@ -26,6 +36,12 @@ public class FragmentDisplayStore extends Fragment
         TextView tt1 = (TextView) v.findViewById(R.id.store_name);
         TextView tt2 = (TextView) v.findViewById(R.id.store_website);
         TextView tt3 = (TextView) v.findViewById(R.id.store_pickles);
+        ImageView mapImage = (ImageView) v.findViewById(R.id.store_image);
+
+        String url = "http://maps.google.com/maps/api/staticmap?center=" + getArguments().getDouble("lat") + "," + getArguments().getDouble("long") + "&zoom=13&markers=" + getArguments().getDouble("lat") + getArguments().getDouble("long")+ "&size=250x188&sensor=false";
+        System.out.println(url);
+        new DownloadImageTask(mapImage).execute(url);
+
 
         if (tt1 != null) {
             tt1.setText(getArguments().getString("name"));
@@ -66,5 +82,43 @@ public class FragmentDisplayStore extends Fragment
             }
         });
         return v;
+    }
+
+    private class DownloadImageTask extends AsyncTask<String,Void,Bitmap> {
+
+        ImageView imageView;
+
+        public DownloadImageTask(ImageView imageView){
+            this.imageView = imageView;
+        }
+
+
+        /*
+            doInBackground(Params... params)
+                Override this method to perform a computation on a background thread.
+         */
+        protected Bitmap doInBackground(String...urls){
+            String urlOfImage = urls[0];
+            Bitmap logo = null;
+            try{
+                InputStream is = new URL(urlOfImage).openStream();
+                /*
+                    decodeStream(InputStream is)
+                        Decode an input stream into a bitmap.
+                 */
+                logo = BitmapFactory.decodeStream(is);
+            }catch(Exception e){ // Catch the download exception
+                e.printStackTrace();
+            }
+            return logo;
+        }
+
+        /*
+            onPostExecute(Result result)
+                Runs on the UI thread after doInBackground(Params...).
+         */
+        protected void onPostExecute(Bitmap result){
+            imageView.setImageBitmap(result);
+        }
     }
 }

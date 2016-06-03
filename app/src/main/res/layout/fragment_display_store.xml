@@ -88,7 +88,6 @@
         android:layout_marginLeft="20dp"
         android:paddingLeft="2dp"
         android:paddingRight="2dp"
-        android:src="@drawable/examplestore"
         android:background="@drawable/back"/>
 
     <Button

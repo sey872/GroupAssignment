@@ -202,7 +202,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
 
 
     */@Override
-                                                                                                              public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
         FragmentManager FM = getFragmentManager();
         FragmentTransaction FT = FM.beginTransaction();
@@ -212,6 +212,9 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
         bundle.putString("name", store.get(position).getName());
         bundle.putString("website", store.get(position).getWebsite());
         bundle.putDouble("rating", store.get(position).getRating());
+        bundle.putDouble("lat", store.get(position).getLatitude());
+        bundle.putDouble("long", store.get(position).getLongitude());
+
         F2.setArguments(bundle);
 
         if (getFragmentManager().findFragmentById(R.id.fr_display_store) == null) {
