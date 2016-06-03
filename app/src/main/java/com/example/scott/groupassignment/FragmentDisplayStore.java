@@ -36,6 +36,7 @@ public class FragmentDisplayStore extends Fragment
         TextView tt1 = (TextView) v.findViewById(R.id.store_name);
         TextView tt2 = (TextView) v.findViewById(R.id.store_website);
         TextView tt3 = (TextView) v.findViewById(R.id.store_pickles);
+        TextView tt4 = (TextView) v.findViewById(R.id.store_address);
         ImageView mapImage = (ImageView) v.findViewById(R.id.store_image);
 
         String url = "http://maps.google.com/maps/api/staticmap?center=" + getArguments().getDouble("lat") + "," + getArguments().getDouble("long") + "&zoom=14&markers=" + getArguments().getDouble("lat") + "," + getArguments().getDouble("long")+ "&size=250x188&sensor=false";
@@ -50,6 +51,9 @@ public class FragmentDisplayStore extends Fragment
         }
         if (tt3 != null) {
             tt3.setText("Pickles: " + String.valueOf(getArguments().getDouble("rating")) + "/5");
+        }
+        if (tt4 != null) {
+            tt4.setText("Address: " + getArguments().getString("address"));
         }
 
         Button xBut = (Button) v.findViewById(R.id.xbutton);

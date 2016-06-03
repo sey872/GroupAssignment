@@ -34,9 +34,10 @@ public class storeList {
     //Rating
     private double rating;
 
-    public storeList(int id, String name, double distance, String website, double rating, double latitude, double longitude)
+    public storeList(int id, String name, String address, double distance, String website, double rating, double latitude, double longitude)
     {
         this.id = id;
+        this.address = address;
         this.name = name;
         this.distance = distance;
         this.website = website;
@@ -48,6 +49,7 @@ public class storeList {
     public storeList() {
         id = 999;
         name = "Jacko's Burgers'";
+        address = "Jacko's place";
         distance = 999.9;
         website = "no website listed";
         rating = 0;
@@ -75,6 +77,10 @@ public class storeList {
         this.name = name;
     }
 
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public void setWebsite(String website) {
         this.website = website;
     }
@@ -93,6 +99,10 @@ public class storeList {
 
     public String getName() {
         return name;
+    }
+
+    public String getAddress() {
+        return address;
     }
 
     public String getWebsite() {

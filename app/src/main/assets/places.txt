@@ -1,52 +1,52 @@
-Bar Luca|52 Phillip Street, CBD, Sydney|barluca.com.au|-33.863942|151.21192
-Chur Burgers|48 Albion Street, Surry Hills, Sydney|churburger.com.au|-33.882257| 151.210243
-Five Points Burgers|124 Walker Street, North Sydney, Sydney|facebook.com/Five-Points-Burger-352136928329438|-33.83733|151.208873
-Burger Project|Shop 6, Level 1, World Square Shopping Centre, 644 George Street, CBD, Sydney|burgerproject.com|-33.876524|151.206186
-Pub Life Kitchen|Lord Wolseley Hotel, 265 Bulwara Road, Ultimo, Sydney|publifekitchen.com|-33.876596|151.196677
-Mister Gee Burger Truck|315 Parramatta Rd, Haberfield, Sydney|facebook.com/MisterGeeBurgerTruck|-33.87462|151.128314
-Mary's|154 Castlereagh Street, CBD, Sydney|zomato.com/sydney/marys-1-cbd|-33.872148|151.209535
-Stitch|61 York Street, CBD, Sydney|stitchbar.com/bar|-33.867461|151.205654
-Bare Grill|Shop 3, 1599 Anzac Parade, La Perouse, Sydney|baregrillandcafe.com|-33.987955|151.232722
-Hotel Chambers|53 Martin Place, CBD, Sydney|hotelchambers.com.au|-33.867935|151.210907
-Moo Gourmet Burgers|232 King Street, Newtown, Sydney|moogourmetburgers.com.au|-33.895581|151.181946
-B L Burgers|Shop 1, 151 Oxford Street, Darlinghurst, Sydney|blburgers.com.au|-33.880225|151.215766
-Bonarche Burgers|14 Norton Street, Leichhardt, Sydney|bonarche.com|-33.8875|151.157254
-Paul's Famous Hamburgers|12 Princes Highway, Sylvania, Sydney|paulsfamoushamburgers.com.au|-34.006772|151.112478
-Jack's Newtown|170 Missenden Road, Newtown, Sydney|jacksnewtown.com|-33.89321|151.183433
-Lord Wolseley Hotel|265 Bulwara Road, Ultimo, Sydney|lordwolseleyhotel.com.au|-33.876596|151.196677
-Burgers by Josh|The Upper Deck, Greenwood Plaza, 36 Blue Street, North Sydney, Sydney|burgersbyjosh.com|-33.840565|151.207851
-Vic's Meat Market|Sydney Fish Market, Bank Street, Pyrmont, Sydney|vicsmeatmarket.com.au|-33.870426|151.190186
-GoodTime Burgers|The Eastern Hotel, Level 3, Westfield Bondi Junction, Bondi Junction|theeastern.com.au/goodtimeburgers|-33.891039|151.248469
-Dean's Diner|385 King Street, Newtown, Sydney|facebook.com/deansdinernewtown|-33.899512|151.177589
-Grill'd|Level 4, Westfield Parramatta, 159-175 Church Street, Parramatta, Sydney,|grilld.com.au|-33.817627|151.002145
-The Burger Joint|393 Liverpool Street, Darlinghurst, Sydney|theburgerjoint.com.au|-33.878397|151.221076
-Soul Burger|49 Perouse Road, Randwick, Sydney|soulburger.com.au|-33.919929|151.242926
-The Hub House Diner|410-412 New Canterbury Road, Dulwich Hill, Sydney|thehubhousediner.com.au|-33.903676|151.142109
-Miss America's Pop-up Diner|210 Belmore Road, Riverwood, Sydney|facebook.com/Miss-Americas-Pop-up-Diner-1508631979414581|-33.952416|151.052318
-BenBry Burgers|5 Sydney Road, Manly, Sydney|benbryburgersmanly.com|-33.797279|151.286732
-Oxford Tavern|1 New Canterbury Road, Petersham, Sydney|theoxfordtavern.com.au|-33.895448|151.156704
-Beejay's|395 Illawarra Road, Marrickville, Sydney|facebook.com/beejayscafebar|-33.915156|151.152046
-BurgerFuel|172 King Street, Newtown, Sydney|au.burgerfuel.com|-33.894183|151.183115
-Rocks Brewing Company|160 Bourke Road, Alexandria, Sydney|rocksbrewing.com|-33.916087|151.191458
-Milky Lane|141 Curlewis Street, Bondi, Sydney|facebook.com/milkylanebondi|-33.889123|151.274181
-Opera Kitchen|Lower Concourse Level, Sydney Opera House, Circular Quay, Sydney|operakitchen.com.au|-33.861858|151.210546
-The Tuckshop|Shop 1, 78 Glenhaven Road, Glenhaven, Sydney|tuckshopcoffee.com.au|-33.698179|151.001132
-Charlie & Co Burgers|Level 5, Westfield Pitt Street Mall, 188 Pitt Street, CBD, Sydney|charlieandco.com.au|-33.870142|151.208847
-Abby's Beer 'n' Burgers|2/235 Mona Vale Road, St Ives, Sydney|facebook.com/abbysbeernburgers|-33.729636|151.162391
-Burger Barrel|207a Coogee Bay Road, Coogee, Sydney|facebook.com/Burger-Barrel-1447675028892124|-33.920854|151.254735
-Meat District Co.|Shop R3, 11 Lime Street, Darling Harbour, Sydney|meatdistrictco.com.au|-33.866867|151.200928
-Hayberry Bar & Diner|97 Willoughby Road, Crows Nest, Sydney|thehayberry.com.au|-33.824033|151.201225
-Out of the Blue|272 Clovelly Road, Clovelly, Sydney|facebook.com/outoftheblueclovelly|-33.912159|151.258508
-D'Munchies|170 King Street, Newtown, Sydney|facebook.com/D.munchies|-33.894148|151.183178
-Trinity Bar & Bistro|505 Crown Street, Surry Hills, Sydney|trinitybar.com.au|-33.888584|151.213144
-Belfield on Botany|Shop 1, 797 Botany Road, Rosebery, Sydney|facebook.com/belfieldonbotany|-33.918411|151.200033
-Pablo's Charcoal Chicken & Ribs|664 Crown Street, Surry Hills, Sydney|pabloschicken.wix.com/surryhills|-33.891328|151.213101
-Crisp CBD|The Passage, 320-324 Pitt Street, CBD, Sydney|thecrisp.com.au|-33.875858|151.208063
-Bonditony's Burger Joint|1/144 Glenayr Avenue, Bondi Beach, Sydney|bonditonysburgerjoint.com|-33.888407|151.271299
-Ribs & Burgers|Cafe Court, The Star, 80 Pyrmont Street, Pyrmont, Sydney|ribsandburgers.com/au|-33.868283|151.194422
-The Stuffed Beaver Diner|271 Bondi Road, Bondi, Sydney|stuffedbeaver.com.au|-33.894802|151.268031
-Funky Monkey Cafe|524 King Street, Newtown, Sydney|facebook.com/Funky-Monkey-cafe-at-Newtown-140372392648120|-33.902436|151.179431
-Danno's Cafe|Shop 2 / 23 Howard Avenue, Dee Why, Sydney|facebook.com/DannosCafe|-33.753089|151.288509
-Inferno Grill & Cafe|Shop 3, 944 Anzac Parade, Maroubra, Sydney|infernogrill.com.au|-33.943486|151.240306
-Assembly Bar|488 Kent Street, CBD, Sydney|assemblybar.com.au|-33.874889|151.20537
-Macelleria|Shop 1, 112-116 Campbell Parade, Bondi Beach, Sydney|macelleria.com.au|-33.891289|151.273481
+Bar Luca~52 Phillip Street, CBD, Sydney~barluca.com.au~-33.863942~151.21192
+Chur Burgers~48 Albion Street, Surry Hills, Sydney~churburger.com.au~-33.882257~ 151.210243
+Five Points Burgers~124 Walker Street, North Sydney, Sydney~facebook.com/Five-Points-Burger-352136928329438~-33.83733~151.208873
+Burger Project~Shop 6, Level 1, World Square Shopping Centre, 644 George Street, CBD, Sydney~burgerproject.com~-33.876524~151.206186
+Pub Life Kitchen~Lord Wolseley Hotel, 265 Bulwara Road, Ultimo, Sydney~publifekitchen.com~-33.876596~151.196677
+Mister Gee Burger Truck~315 Parramatta Rd, Haberfield, Sydney~facebook.com/MisterGeeBurgerTruck~-33.87462~151.128314
+Mary's~154 Castlereagh Street, CBD, Sydney~zomato.com/sydney/marys-1-cbd~-33.872148~151.209535
+Stitch~61 York Street, CBD, Sydney~stitchbar.com/bar~-33.867461~151.205654
+Bare Grill~Shop 3, 1599 Anzac Parade, La Perouse, Sydney~baregrillandcafe.com~-33.987955~151.232722
+Hotel Chambers~53 Martin Place, CBD, Sydney~hotelchambers.com.au~-33.867935~151.210907
+Moo Gourmet Burgers~232 King Street, Newtown, Sydney~moogourmetburgers.com.au~-33.895581~151.181946
+B L Burgers~Shop 1, 151 Oxford Street, Darlinghurst, Sydney~blburgers.com.au~-33.880225~151.215766
+Bonarche Burgers~14 Norton Street, Leichhardt, Sydney~bonarche.com~-33.8875~151.157254
+Paul's Famous Hamburgers~12 Princes Highway, Sylvania, Sydney~paulsfamoushamburgers.com.au~-34.006772~151.112478
+Jack's Newtown~170 Missenden Road, Newtown, Sydney~jacksnewtown.com~-33.89321~151.183433
+Lord Wolseley Hotel~265 Bulwara Road, Ultimo, Sydney~lordwolseleyhotel.com.au~-33.876596~151.196677
+Burgers by Josh~The Upper Deck, Greenwood Plaza, 36 Blue Street, North Sydney, Sydney~burgersbyjosh.com~-33.840565~151.207851
+Vic's Meat Market~Sydney Fish Market, Bank Street, Pyrmont, Sydney~vicsmeatmarket.com.au~-33.870426~151.190186
+GoodTime Burgers~The Eastern Hotel, Level 3, Westfield Bondi Junction, Bondi Junction~theeastern.com.au/goodtimeburgers~-33.891039~151.248469
+Dean's Diner~385 King Street, Newtown, Sydney~facebook.com/deansdinernewtown~-33.899512~151.177589
+Grill'd~Level 4, Westfield Parramatta, 159-175 Church Street, Parramatta, Sydney,~grilld.com.au~-33.817627~151.002145
+The Burger Joint~393 Liverpool Street, Darlinghurst, Sydney~theburgerjoint.com.au~-33.878397~151.221076
+Soul Burger~49 Perouse Road, Randwick, Sydney~soulburger.com.au~-33.919929~151.242926
+The Hub House Diner~410-412 New Canterbury Road, Dulwich Hill, Sydney~thehubhousediner.com.au~-33.903676~151.142109
+Miss America's Pop-up Diner~210 Belmore Road, Riverwood, Sydney~facebook.com/Miss-Americas-Pop-up-Diner-1508631979414581~-33.952416~151.052318
+BenBry Burgers~5 Sydney Road, Manly, Sydney~benbryburgersmanly.com~-33.797279~151.286732
+Oxford Tavern~1 New Canterbury Road, Petersham, Sydney~theoxfordtavern.com.au~-33.895448~151.156704
+Beejay's~395 Illawarra Road, Marrickville, Sydney~facebook.com/beejayscafebar~-33.915156~151.152046
+BurgerFuel~172 King Street, Newtown, Sydney~au.burgerfuel.com~-33.894183~151.183115
+Rocks Brewing Company~160 Bourke Road, Alexandria, Sydney~rocksbrewing.com~-33.916087~151.191458
+Milky Lane~141 Curlewis Street, Bondi, Sydney~facebook.com/milkylanebondi~-33.889123~151.274181
+Opera Kitchen~Lower Concourse Level, Sydney Opera House, Circular Quay, Sydney~operakitchen.com.au~-33.861858~151.210546
+The Tuckshop~Shop 1, 78 Glenhaven Road, Glenhaven, Sydney~tuckshopcoffee.com.au~-33.698179~151.001132
+Charlie & Co Burgers~Level 5, Westfield Pitt Street Mall, 188 Pitt Street, CBD, Sydney~charlieandco.com.au~-33.870142~151.208847
+Abby's Beer 'n' Burgers~2/235 Mona Vale Road, St Ives, Sydney~facebook.com/abbysbeernburgers~-33.729636~151.162391
+Burger Barrel~207a Coogee Bay Road, Coogee, Sydney~facebook.com/Burger-Barrel-1447675028892124~-33.920854~151.254735
+Meat District Co.~Shop R3, 11 Lime Street, Darling Harbour, Sydney~meatdistrictco.com.au~-33.866867~151.200928
+Hayberry Bar & Diner~97 Willoughby Road, Crows Nest, Sydney~thehayberry.com.au~-33.824033~151.201225
+Out of the Blue~272 Clovelly Road, Clovelly, Sydney~facebook.com/outoftheblueclovelly~-33.912159~151.258508
+D'Munchies~170 King Street, Newtown, Sydney~facebook.com/D.munchies~-33.894148~151.183178
+Trinity Bar & Bistro~505 Crown Street, Surry Hills, Sydney~trinitybar.com.au~-33.888584~151.213144
+Belfield on Botany~Shop 1, 797 Botany Road, Rosebery, Sydney~facebook.com/belfieldonbotany~-33.918411~151.200033
+Pablo's Charcoal Chicken & Ribs~664 Crown Street, Surry Hills, Sydney~pabloschicken.wix.com/surryhills~-33.891328~151.213101
+Crisp CBD~The Passage, 320-324 Pitt Street, CBD, Sydney~thecrisp.com.au~-33.875858~151.208063
+Bonditony's Burger Joint~1/144 Glenayr Avenue, Bondi Beach, Sydney~bonditonysburgerjoint.com~-33.888407~151.271299
+Ribs & Burgers~Cafe Court, The Star, 80 Pyrmont Street, Pyrmont, Sydney~ribsandburgers.com/au~-33.868283~151.194422
+The Stuffed Beaver Diner~271 Bondi Road, Bondi, Sydney~stuffedbeaver.com.au~-33.894802~151.268031
+Funky Monkey Cafe~524 King Street, Newtown, Sydney~facebook.com/Funky-Monkey-cafe-at-Newtown-140372392648120~-33.902436~151.179431
+Danno's Cafe~Shop 2 / 23 Howard Avenue, Dee Why, Sydney~facebook.com/DannosCafe~-33.753089~151.288509
+Inferno Grill & Cafe~Shop 3, 944 Anzac Parade, Maroubra, Sydney~infernogrill.com.au~-33.943486~151.240306
+Assembly Bar~488 Kent Street, CBD, Sydney~assemblybar.com.au~-33.874889~151.20537
+Macelleria~Shop 1, 112-116 Campbell Parade, Bondi Beach, Sydney~macelleria.com.au~-33.891289~151.273481

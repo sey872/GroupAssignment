@@ -46,8 +46,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         for(int i = 0; i < pass.size(); i++)
         {
-            String[] parts = pass.get(i).split(",");
-            store.add(new storeList(i, parts[0], 2.4, parts[1], 4.5, Double.parseDouble(parts[2]), Double.parseDouble(parts[3])));
+            String[] parts = pass.get(i).split("~");
+            store.add(new storeList(i, parts[0], parts[1], 2.4, parts[2], 4.5, Double.parseDouble(parts[3]), Double.parseDouble(parts[4])));
         }
 
         Button toList = (Button) findViewById(R.id.tolist);

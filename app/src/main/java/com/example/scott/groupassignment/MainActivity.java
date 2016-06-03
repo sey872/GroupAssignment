@@ -88,7 +88,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
             reader = new BufferedReader(new InputStreamReader(in));
             while ((line = reader.readLine()) != null) {
                 list.add(line);
-                String[] parts = line.split(",");
+                String[] parts = line.split("~");
                 //rating to display
                 double finalRating = 0.0;
                 //get list of ratings for store
@@ -97,9 +97,11 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
                 if (ratings != null) {
                     finalRating = getRating(ratings);
                 }
-                double dist = getDistance(longitude, latitude, Double.parseDouble(parts[3]), Double.parseDouble(parts[2]));
 
-                store.add(new storeList(num++, parts[0], dist, parts[1], finalRating, Double.parseDouble(parts[2]), Double.parseDouble(parts[3])));
+                System.out.println("TESTING: " + parts[4] + ", " + parts[3]);
+                double dist = getDistance(longitude, latitude, Double.parseDouble(parts[4]), Double.parseDouble(parts[3]));
+
+                store.add(new storeList(num++, parts[0], parts[1], dist, parts[2], finalRating, Double.parseDouble(parts[3]), Double.parseDouble(parts[4])));
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -138,6 +140,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
 
         bundle = new Bundle();
         bundle.putString("name", store.get(position).getName());
+        bundle.putString("address", store.get(position).getAddress());
         bundle.putString("website", store.get(position).getWebsite());
         bundle.putDouble("rating", store.get(position).getRating());
         bundle.putDouble("lat", store.get(position).getLatitude());
