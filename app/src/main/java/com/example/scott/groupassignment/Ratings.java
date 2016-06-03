@@ -60,10 +60,10 @@ public class Ratings {
     public Ratings()
     {
         toGet = "all";
-        startUrl = "https://api.myjson.com/bins/3mloq";
+        startUrl = "http://myjson.com/54mwi";
 
         store = new ArrayList<>();
-        performNASARequest("whatever");
+        performNASARequest();
         //ratings.add(testJSON("bob"));
     }
 
@@ -79,38 +79,11 @@ public class Ratings {
         return null;
     }
 
-    public String testJSON(String storeName)
-    {
-        String jsonStr = "{\"store\":[{\"name\":\"bob\",\"rating\":\"2.5\"}, {\"name\":\"ded\",\"rating\":\"4.5\"}]}";
-        String rating = "failed";
-
-        JSONArray jArray = null;
-        try {
-            JSONObject jsonStart =  new JSONObject(jsonStr);
-
-            jArray = jsonStart.getJSONArray("store");
-            for (int i = 0; i < jArray.length(); i++)
-            {
-                JSONObject jstore = jArray.getJSONObject(i);
-                String jName = jstore.getString("name");
-                rating = jstore.getString("rating");
-
-                System.out.println("Name: " + jName);
-                System.out.println("Rating: " + rating);
-            }
-
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return rating;
-    }
-
-    public String performNASARequest(String storeName)
+    public String performNASARequest()
     {
         String rating = null;
         try {
-            rating = new HTMLNetControl().execute(storeName).get();
+            rating = new HTMLNetControl().execute("").get();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
