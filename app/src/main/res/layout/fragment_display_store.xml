@@ -93,15 +93,15 @@
     <TextView
         android:id="@+id/store_address"
         android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         android:gravity="left"
         android:textSize="18dp"
         android:paddingLeft="20dp"
         android:textColor="#000000"
         android:textStyle="bold"
-        android:maxLines="2"
+        android:maxLines="3"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Address: 169 Queens Rd Connells Point 2221"
+        android:text="Address: "
         />
 
 

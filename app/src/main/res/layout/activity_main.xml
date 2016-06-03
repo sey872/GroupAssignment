@@ -62,7 +62,7 @@
     <RelativeLayout
         android:id="@+id/fr_display_store"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="410dp"
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
