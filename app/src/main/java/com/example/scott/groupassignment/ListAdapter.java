@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 /**
@@ -47,7 +48,8 @@ public class ListAdapter extends ArrayAdapter<storeList> {
             }
 
             if (tt2 != null) {
-                tt2.setText(String.valueOf(p.getDistance()) + "KM");
+                DecimalFormat df = new DecimalFormat("#.###");
+                tt2.setText(String.valueOf(df.format(p.getDistance())) + "KM");
             }
         }
         return v;

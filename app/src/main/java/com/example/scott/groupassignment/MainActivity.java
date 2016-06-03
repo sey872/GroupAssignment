@@ -103,6 +103,8 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
             e.printStackTrace();
         }
 
+        sortList(store);
+
         ListView l = (ListView) findViewById(R.id.listView);
 
         ListAdapter change = new ListAdapter(this, R.layout.item_row, store);
@@ -411,7 +413,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
                 * Math.cos(y2 * d2r) * Math.pow(Math.sin(dLong / 2.0), 2);
         double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
         double d = 6367000 * c;
-        return (Math.round(d)/1000);
+        return (d/1000);
     }
 
 
