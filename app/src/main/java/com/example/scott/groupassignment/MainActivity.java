@@ -79,27 +79,31 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
         Ratings storeRatings = new Ratings();
         int num = 0;
 
-        SupportMapFragment fm = (SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.map);
+        SupportMapFragment fm = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         // Getting Map for the SupportMapFragment
         map = fm.getMap();
 
-        if(map!=null) {
+        if (map != null) {
 
             // Enable MyLocation Button in the Map
             map.setMyLocationEnabled(true);
             LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
             Location myLocation = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
-            longitude = myLocation.getLongitude();
-            latitude = myLocation.getLatitude();
+            if (myLocation != null) {
+                longitude = myLocation.getLongitude();
+                latitude = myLocation.getLatitude();
+            } else {
+                latitude = -33.9859888;
+                longitude = 151.090324;
+            }
         }
-/*
+        map = null;
         System.out.println("your lat is: " + latitude);
         System.out.println("your long is: " + longitude);
         try {
             in = this.getAssets().open("places.txt");
             reader = new BufferedReader(new InputStreamReader(in));
-            while((line = reader.readLine()) != null)
-            {
+            while ((line = reader.readLine()) != null) {
                 list.add(line);
                 String[] parts = line.split(",");
 
@@ -110,11 +114,11 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
                 List<String> ratings = storeRatings.getRatings(parts[0]);
 
                 //if store has ratings calculate the average
-                if(ratings != null) {
+                if (ratings != null) {
                     finalRating = getRating(ratings);
                 }
-
-                store.add(new storeList(num++, parts[0], 3.4, parts[1], finalRating, Double.parseDouble(parts[2]), Double.parseDouble(parts[3])));
+                double dist = getDistance(Double.parseDouble(parts[2]), latitude, Double.parseDouble(parts[3]), longitude);
+                store.add(new storeList(num++, parts[0], dist, parts[1], finalRating, Double.parseDouble(parts[2]), Double.parseDouble(parts[3])));
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -138,9 +142,9 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
                 i.putStringArrayListExtra("stores", (ArrayList<String>) toPass);
                 startActivity(i);
             }
-        });*/
+        });
 
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+        //client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
 
 
         /*// Initializing
@@ -211,7 +215,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
             });
         }*/
     }
-
+/*
     private String getDirectionsUrl(LatLng origin,LatLng dest){
 
         // Origin of route
@@ -236,7 +240,6 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
         return url;
     }
 
-    /** A method to download json data from url */
     private String downloadUrl(String strUrl) throws IOException{
         String data = "";
         InputStream iStream = null;
@@ -310,7 +313,6 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
         }
     }
 
-    /** A class to parse the Google Places in JSON format */
     private class ParserTask extends AsyncTask<String, Integer, List<List<HashMap<String,String>>> >{
 
         // Parsing the data in non-ui thread
@@ -369,7 +371,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
                 map.addPolyline(lineOptions);
         }
     }
-
+*/
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
@@ -421,6 +423,12 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
         }
     }
 
+    private double getDistance(double x1, double y1, double x2, double y2)
+    {
+        double distance = Math.sqrt(Math.pow(x2-x1,2)+Math.pow(y2-y1,2));
+        return distance;
+    }
+
     private void swap(List<storeList> list, int i, int j)
     {
         storeList temp = list.get(i);
@@ -444,7 +452,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
             super.onBackPressed();
         }
     }
-
+/*
     @Override
     public void onStart() {
         super.onStart();
@@ -483,5 +491,5 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
         );
         AppIndex.AppIndexApi.end(client, viewAction);
         client.disconnect();
-    }
+    }*/
 }
