@@ -3,43 +3,24 @@ package com.example.scott.groupassignment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.content.pm.PackageManager;
-import android.graphics.Color;
-import android.net.Uri;
-import android.os.AsyncTask;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.PolylineOptions;
-import android.support.v4.app.FragmentActivity;
-import android.util.Log;
-import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class MainActivity extends FragmentActivity implements AdapterView.OnItemClickListener {
@@ -68,6 +49,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
         BufferedReader reader;
         String line;
         List<String> list = new ArrayList<>();
+        Ratings storeRatings = new Ratings();
         int num = 0;
         try {
             in = this.getAssets().open("places.txt");
@@ -76,7 +58,19 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
             {
                 list.add(line);
                 String[] parts = line.split(",");
-                store.add(new storeList(num++, parts[0], 2.4, parts[1], 4.5, Double.parseDouble(parts[2]), Double.parseDouble(parts[3])));
+
+                //rating to display
+                double finalRating = 0.0;
+
+                //get list of ratings for store
+                List<String> ratings = storeRatings.getRatings(parts[0]);
+
+                //if store has ratings calculate the average
+                if(ratings != null) {
+                    finalRating = getRating(ratings);
+                }
+
+                store.add(new storeList(num++, parts[0], 3.4, parts[1], finalRating, Double.parseDouble(parts[2]), Double.parseDouble(parts[3])));
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -105,6 +99,16 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+    }
+
+    private double getRating(List<String> rating)
+    {
+        double toReturn = 0.0;
+        for(int i = 0; i < rating.size(); i++) {
+            toReturn += Double.valueOf(rating.get(i));
+        }
+        toReturn = toReturn/rating.size();
+        return toReturn;
     }
 
     private void sortList(List<storeList> list)
@@ -172,11 +176,33 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
                     downloadTask.execute(url);// Start downloading json data from Google Directions API
                 }
             }
-        });
+        });HashMap<String, String> point = path.get(j);
+
+                    if (j == 0) {    // Get distance from the list
+                        distance = (String) point.get("distance");
+                        continue;
+                    } else if (j == 1) { // Get duration from the list
+                        duration = (String) point.get("duration");
+                        continue;
+                    }
+
+                    double lat = Double.parseDouble(point.get("lat"));
+                    double lng = Double.parseDouble(point.get("lng"));
+                    LatLng position = new LatLng(lat, lng);
+
+                    points.add(position);
+                }
+                // Adding all the points in the route to LineOptions
+                lineOptions.addAll(points);
+                lineOptions.width(2);
+                lineOptions.color(Color.RED);
+            }
+            tvDistanceDuration.setText("Distance:" + distance + ", Duration:" + duration);
+            // Drawing
 
 
     */@Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                                                                                              public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
         FragmentManager FM = getFragmentManager();
         FragmentTransaction FT = FM.beginTransaction();
@@ -299,29 +325,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
 
                 // Fetching all the points in i-th route
                 for (int j = 0; j < path.size(); j++) {
-                    HashMap<String, String> point = path.get(j);
-
-                    if (j == 0) {    // Get distance from the list
-                        distance = (String) point.get("distance");
-                        continue;
-                    } else if (j == 1) { // Get duration from the list
-                        duration = (String) point.get("duration");
-                        continue;
-                    }
-
-                    double lat = Double.parseDouble(point.get("lat"));
-                    double lng = Double.parseDouble(point.get("lng"));
-                    LatLng position = new LatLng(lat, lng);
-
-                    points.add(position);
-                }
-                // Adding all the points in the route to LineOptions
-                lineOptions.addAll(points);
-                lineOptions.width(2);
-                lineOptions.color(Color.RED);
-            }
-            tvDistanceDuration.setText("Distance:" + distance + ", Duration:" + duration);
-            // Drawing polyline in the Google Map for the i-th route
+                    polyline in the Google Map for the i-th route
             map.addPolyline(lineOptions);
         }
     }
