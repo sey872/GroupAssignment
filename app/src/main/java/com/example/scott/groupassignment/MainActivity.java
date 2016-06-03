@@ -330,12 +330,12 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
                 List<HashMap<String, String>> path = result.get(i);
 
                 // Fetching all the points in i-th route
-                for(int j=0;j<path.size();j++){
+                for(int j=2;j<path.size();j++){
                     HashMap<String,String> point = path.get(j);
 
                     double lat = Double.parseDouble(point.get("lat"));
                     double lng = Double.parseDouble(point.get("lng"));
-                    LatLng position = new LatLng(i, i*5);
+                    LatLng position = new LatLng(lat, lng);
 
                     points.add(position);
                 }
