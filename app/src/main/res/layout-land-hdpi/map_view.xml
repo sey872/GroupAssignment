@@ -27,7 +27,7 @@
             android:layout_height="40dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:layout_marginLeft="60dp"
+            android:layout_marginLeft="310dp"
             android:textSize="22dp"
             android:background="@drawable/listviewback"
             android:text="LIST VIEW"

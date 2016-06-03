@@ -69,7 +69,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        /*setContentView(R.layout.activity_main);
 
         store = new ArrayList<>();
         InputStream in;
@@ -138,12 +138,12 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
                 i.putStringArrayListExtra("stores", (ArrayList<String>) toPass);
                 startActivity(i);
             }
-        });
+        });*/
 
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
 
 
-        // Initializing
+        /*// Initializing
         markerPoints = new ArrayList<LatLng>();
 
         // Getting reference to SupportMapFragment of the activity_main
@@ -180,10 +180,6 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
                     // Setting the position of the marker
                     options.position(point);
 
-                    /**
-                     * For the start location, the color of marker is GREEN and
-                     * for the end location, the color of marker is RED.
-                     */
                     if (markerPoints.size() == 1) {
                         options.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
                     } else if (markerPoints.size() == 2) {
@@ -213,7 +209,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
 
                 }
             });
-        }
+        }*/
     }
 
     private String getDirectionsUrl(LatLng origin,LatLng dest){
