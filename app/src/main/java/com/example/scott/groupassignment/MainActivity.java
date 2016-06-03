@@ -29,11 +29,8 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
 
     private Bundle bundle;
     private GoogleMap map;
-    //private ArrayList<LatLng> markerPoints;
-    //private TextView tvDistanceDuration;
     protected static boolean isMainShown = false;
-    //private LocationManager locationManager;
-    //private LocationListener locationListener;
+
 
     private List<storeList> store;
 
@@ -120,9 +117,6 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
                 startActivity(i);
             }
         });
-
-
-
     }
 
     @Override
@@ -149,8 +143,6 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
         }
         FT.commit();
     }
-
-
 
     private double getRating(List<String> rating)
     {
@@ -187,7 +179,6 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
         double d = 6367000 * c;
         return (d/1000);
     }
-
 
     private void swap(List<storeList> list, int i, int j)
     {

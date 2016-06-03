@@ -12,7 +12,14 @@ import java.util.List;
 
 //directions implementation attempt now commented to show working or attempt
 
+
+
 public class DirectionsAttempt {
+
+    //private LocationManager locationManager;
+    //private LocationListener locationListener;
+    //private ArrayList<LatLng> markerPoints;
+    //private TextView tvDistanceDuration;
 
     /**
      * Receives a JSONObject and returns a list of lists containing latitude and longitude
