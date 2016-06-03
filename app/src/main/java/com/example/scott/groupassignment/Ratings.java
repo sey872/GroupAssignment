@@ -60,7 +60,7 @@ public class Ratings {
     public Ratings()
     {
         toGet = "all";
-        startUrl = "https://api.myjson.com/bins/54mwi";
+        startUrl = "https://api.myjson.com/bins/3yove";
 
         store = new ArrayList<>();
         performNASARequest();

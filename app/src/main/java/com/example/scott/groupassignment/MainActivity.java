@@ -51,6 +51,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
         int num = 0;
 
         SupportMapFragment fm = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+
         // Getting Map for the SupportMapFragment
         map = fm.getMap();
 
@@ -77,13 +78,10 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
             while ((line = reader.readLine()) != null) {
                 list.add(line);
                 String[] parts = line.split(",");
-
                 //rating to display
                 double finalRating = 0.0;
-
                 //get list of ratings for store
                 List<String> ratings = storeRatings.getRatings(parts[0]);
-
                 //if store has ratings calculate the average
                 if (ratings != null) {
                     finalRating = getRating(ratings);
