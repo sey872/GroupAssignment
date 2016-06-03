@@ -89,12 +89,23 @@
                     android:text="Pickles: 4.5/5"
                     android:layout_gravity="center"
                     />
+                 <Button
+                     android:layout_width="70dp"
+                     android:layout_height="34dp"
+                     android:layout_marginTop="10dp"
+                     android:text="RATE"
+                     android:textStyle="bold"
+                     android:textSize="20dp"
+                     android:id="@+id/ratebutton"
+                     android:background="@drawable/listviewback"
+                     android:layout_gravity="center" />
                  <TextView
                      android:id="@+id/store_address"
                      android:layout_width="300dp"
                      android:layout_height="70dp"
                      android:gravity="left"
                      android:textSize="18dp"
+                     android:layout_marginTop="10dp"
                      android:paddingLeft="20dp"
                      android:textColor="#000000"
                      android:textStyle="bold"

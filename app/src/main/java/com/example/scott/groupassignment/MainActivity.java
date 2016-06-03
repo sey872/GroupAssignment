@@ -51,9 +51,8 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
         int num = 0;
 
         final SupportMapFragment fm = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        if(isHidden == false) {
+        if(fm.getView() != null) {
             fm.getView().setVisibility(View.GONE);
-            isHidden = true;
         }
 
         // Getting Map for the SupportMapFragment
