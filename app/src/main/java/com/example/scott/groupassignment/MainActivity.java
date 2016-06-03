@@ -69,7 +69,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        /*setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main);
 
         store = new ArrayList<>();
         InputStream in;
@@ -92,7 +92,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
             longitude = myLocation.getLongitude();
             latitude = myLocation.getLatitude();
         }
-
+/*
         System.out.println("your lat is: " + latitude);
         System.out.println("your long is: " + longitude);
         try {
