@@ -3,6 +3,9 @@ package com.example.scott.groupassignment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.location.Location;
+import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
@@ -13,6 +16,7 @@ import android.widget.TextView;
 
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
 
@@ -29,8 +33,9 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
     private GoogleMap map;
     private ArrayList<LatLng> markerPoints;
     private TextView tvDistanceDuration;
-
     protected static boolean isMainShown = false;
+    private LocationManager locationManager;
+    private LocationListener locationListener;
 
     private List<storeList> store;
     /**
@@ -96,6 +101,25 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
             }
         });
 
+        /*locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+        locationListener = new LocationListener() {
+            @Override
+            public void onLocationChanged(Location location) {
+
+            }
+
+            public void onProviderDisabled(String s){
+
+            }
+        };//if(checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+        {
+
+        }
+        else
+        {
+            locationManager.requestLocationUpdates("gps", 10000, 0, (android.location.LocationListener) locationListener);
+        }*/
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
