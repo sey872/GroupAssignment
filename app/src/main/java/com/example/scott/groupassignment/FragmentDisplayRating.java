@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,12 +32,14 @@ public class FragmentDisplayRating extends Fragment {
         star.add((Button) v.findViewById(R.id.fourstar));
         star.add((Button) v.findViewById(R.id.fivestar));
 
+        final int[] rating = {0};
         for (int i = 0; i < star.size(); i++) {
             final int val = i;
             star.get(i).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     for (int j = 0; j < star.size(); j++) {
+                        rating[0] = j;
                         if (j <= val) {
                             star.get(j).setBackground(getResources().getDrawable(R.drawable.xbuttonback));
                         } else {
@@ -52,6 +55,16 @@ public class FragmentDisplayRating extends Fragment {
         xBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                getFragmentManager().popBackStack();
+            }
+        });
+
+        Button rateStore = (Button) v.findViewById(R.id.rateButton);
+
+        rateStore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Thank you for your rating of: " + String.valueOf(rating[0]), Toast.LENGTH_LONG).show();
                 getFragmentManager().popBackStack();
             }
         });

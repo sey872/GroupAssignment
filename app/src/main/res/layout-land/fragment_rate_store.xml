@@ -82,6 +82,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/rateButton"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:paddingLeft="10dp"
@@ -91,6 +92,5 @@
         android:layout_marginBottom="8dp"
         android:textSize="24dp"
         android:background="@drawable/buttonback"
-        android:text="CONFIRM RATING"
-        android:id="@+id/getdirbutteon"/>
+        android:text="CONFIRM RATING" />
 </LinearLayout>
