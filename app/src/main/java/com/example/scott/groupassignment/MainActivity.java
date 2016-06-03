@@ -30,7 +30,6 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
     private Bundle bundle;
     private GoogleMap map;
     protected static boolean isMainShown = false;
-    private boolean isHidden = false;
 
     private List<storeList> store;
 
@@ -51,10 +50,8 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
         int num = 0;
 
         final SupportMapFragment fm = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        if(isHidden == false) {
-            fm.getView().setVisibility(View.GONE);
-            isHidden = true;
-        }
+
+        fm.getView().setVisibility(View.GONE);
 
         // Getting Map for the SupportMapFragment
         map = fm.getMap();
@@ -126,7 +123,6 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
                 Intent i = new Intent(getApplicationContext(), MapsActivity.class);
                 i.putStringArrayListExtra("stores", (ArrayList<String>) toPass);
                 startActivity(i);
-                fm.getView().setVisibility(View.INVISIBLE);
             }
         });
     }
