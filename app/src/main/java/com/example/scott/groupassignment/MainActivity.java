@@ -3,16 +3,13 @@ package com.example.scott.groupassignment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
-<<<<<<< HEAD
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Build;
-=======
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
->>>>>>> refs/remotes/origin/Jackson
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
@@ -120,34 +117,8 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
                 i.putStringArrayListExtra("stores", (ArrayList<String>) toPass);
                 startActivity(i);
             }
-<<<<<<< HEAD
-        });
-
-        /*locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-        locationListener = new LocationListener() {
-            @Override
-            public void onLocationChanged(Location location) {
-
-            }
-
-            public void onProviderDisabled(String s){
-
-            }
-        };//if(checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
-        {
-
-        }
-        else
-        {
-            locationManager.requestLocationUpdates("gps", 10000, 0, (android.location.LocationListener) locationListener);
-        }*/
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-=======
         });*/
-//////////////////////////////////////////////////////////////////////////////////////////////
->>>>>>> refs/remotes/origin/Jackson
+
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
 
 
