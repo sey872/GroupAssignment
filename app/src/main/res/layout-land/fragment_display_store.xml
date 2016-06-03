@@ -89,28 +89,19 @@
                     android:text="Pickles: 4.5/5"
                     android:layout_gravity="center"
                     />
-
-                <Button
-                    android:layout_width="120dp"
-                    android:layout_height="44dp"
-                    android:layout_marginTop="10dp"
-                    android:text="RATE"
-                    android:textStyle="bold"
-                    android:textSize="30dp"
-                    android:id="@+id/ratebutton"
-                    android:background="@drawable/listviewback"
-                    android:layout_gravity="center" />
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    android:layout_marginTop="10dp"
-                    android:textSize="24dp"
-                    android:background="@drawable/buttonback"
-                    android:text="GET DIRECTIONS"
-                    android:id="@+id/getdirbutteon"
-                    android:layout_gravity="center"/>
+                 <TextView
+                     android:id="@+id/store_address"
+                     android:layout_width="300dp"
+                     android:layout_height="50dp"
+                     android:gravity="left"
+                     android:textSize="18dp"
+                     android:paddingLeft="20dp"
+                     android:textColor="#000000"
+                     android:textStyle="bold"
+                     android:maxLines="2"
+                     android:textAppearance="?android:attr/textAppearanceSmall"
+                     android:text="Address: 169 Queens Rd Connells Point 2221"
+                     />
              </LinearLayout>
         </LinearLayout>
     </RelativeLayout>

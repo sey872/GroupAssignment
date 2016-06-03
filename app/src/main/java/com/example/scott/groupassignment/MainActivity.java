@@ -51,7 +51,9 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
         int num = 0;
 
         final SupportMapFragment fm = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        fm.getView().setVisibility(View.INVISIBLE);
+        if(fm != null) {
+            fm.getView().setVisibility(View.GONE);
+        }
 
         // Getting Map for the SupportMapFragment
         map = fm.getMap();
@@ -70,7 +72,16 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
                 longitude = 151.090324;
             }
         }
-        map = null;
+        /*  ATTEMPT TO REMOVE MAP FRAGMENT RUNNING IN THE BACKGROUND
+        android.app.Fragment fragment = this.getFragmentManager().findFragmentById(R.id.map);
+        if (fragment != null) {
+            android.app.FragmentTransaction ft = this.getFragmentManager().beginTransaction();
+            ft.remove(fragment);
+            ft.commit();
+            map = null;
+        }
+        */
+
         System.out.println("your lat is: " + latitude);
         System.out.println("your long is: " + longitude);
         try {
