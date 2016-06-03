@@ -39,7 +39,6 @@ public class FragmentDisplayStore extends Fragment
         ImageView mapImage = (ImageView) v.findViewById(R.id.store_image);
 
         String url = "http://maps.google.com/maps/api/staticmap?center=" + getArguments().getDouble("lat") + "," + getArguments().getDouble("long") + "&zoom=14&markers=" + getArguments().getDouble("lat") + "," + getArguments().getDouble("long")+ "&size=250x188&sensor=false";
-        System.out.println(url);
         new DownloadImageTask(mapImage).execute(url);
 
 

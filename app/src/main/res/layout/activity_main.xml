@@ -5,20 +5,11 @@
     android:background="@color/bgcolor"
     tools:context="com.example.scott.groupassignment.MainActivity">
 
-    <TextView
-        android:id="@+id/tv_distance_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:text="@string/hello_world"
-        android:visibility="gone"/>
-
     <fragment
         android:id="@+id/map"
         class="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_distance_time"
         android:visibility="gone"/>
 
     <LinearLayout

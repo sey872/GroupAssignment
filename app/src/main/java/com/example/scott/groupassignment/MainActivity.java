@@ -50,7 +50,8 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
         Ratings storeRatings = new Ratings();
         int num = 0;
 
-        SupportMapFragment fm = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        final SupportMapFragment fm = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        fm.getView().setVisibility(View.INVISIBLE);
 
         // Getting Map for the SupportMapFragment
         map = fm.getMap();
@@ -113,6 +114,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
                 Intent i = new Intent(getApplicationContext(), MapsActivity.class);
                 i.putStringArrayListExtra("stores", (ArrayList<String>) toPass);
                 startActivity(i);
+                fm.getView().setVisibility(View.INVISIBLE);
             }
         });
     }
