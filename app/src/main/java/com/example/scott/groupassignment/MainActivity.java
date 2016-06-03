@@ -2,6 +2,7 @@ package com.example.scott.groupassignment;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
 import android.location.LocationManager;
@@ -62,19 +63,38 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
     private GoogleApiClient client;
+    private double latitude;
+    private double longitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*store = new ArrayList<>();
+        store = new ArrayList<>();
         InputStream in;
         BufferedReader reader;
         String line;
         List<String> list = new ArrayList<>();
         Ratings storeRatings = new Ratings();
         int num = 0;
+
+        SupportMapFragment fm = (SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.map);
+        // Getting Map for the SupportMapFragment
+        map = fm.getMap();
+
+        if(map!=null) {
+
+            // Enable MyLocation Button in the Map
+            map.setMyLocationEnabled(true);
+            LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+            Location myLocation = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
+            longitude = myLocation.getLongitude();
+            latitude = myLocation.getLatitude();
+        }
+
+        System.out.println("your lat is: " + latitude);
+        System.out.println("your long is: " + longitude);
         try {
             in = this.getAssets().open("places.txt");
             reader = new BufferedReader(new InputStreamReader(in));
@@ -118,7 +138,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
                 i.putStringArrayListExtra("stores", (ArrayList<String>) toPass);
                 startActivity(i);
             }
-        });*/
+        });
 
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
 
@@ -127,15 +147,17 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
         markerPoints = new ArrayList<LatLng>();
 
         // Getting reference to SupportMapFragment of the activity_main
-        SupportMapFragment fm = (SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.map);
+        //SupportMapFragment fm = (SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.map);
 
         // Getting Map for the SupportMapFragment
-        map = fm.getMap();
+        //map = fm.getMap();
 
         if(map!=null){
 
             // Enable MyLocation Button in the Map
             map.setMyLocationEnabled(true);
+
+
 
             // Setting onclick event listener for the map
             map.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
@@ -144,7 +166,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
                 public void onMapClick(LatLng point) {
 
                     // Already two locations
-                    if(markerPoints.size()>1){
+                    if (markerPoints.size() > 1) {
                         markerPoints.clear();
                         map.clear();
                     }
@@ -162,9 +184,9 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
                      * For the start location, the color of marker is GREEN and
                      * for the end location, the color of marker is RED.
                      */
-                    if(markerPoints.size()==1){
+                    if (markerPoints.size() == 1) {
                         options.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
-                    }else if(markerPoints.size()==2){
+                    } else if (markerPoints.size() == 2) {
                         options.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
                     }
 
@@ -173,7 +195,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
                     map.addMarker(options);
 
                     // Checks, whether start and end locations are captured
-                    if(markerPoints.size() >= 2){
+                    if (markerPoints.size() >= 2) {
                         LatLng origin = markerPoints.get(0);
                         LatLng dest = markerPoints.get(1);
 
