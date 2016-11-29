@@ -3,13 +3,13 @@ GROUP LEADER: Jackson Collins
 STUDENTS
 Name:Jackson Collins
 User:jrc772
+Number:4603254
 Email:jrc772@uowmail.edu.au
 
 Name:Scott Young
 User:sey872
+Number:4524639
 Email:sey872@uowmail.edu.au
-
-
 
 
 CODE
@@ -29,14 +29,6 @@ MainActivity.java
 		
 	private void swap(List<storeList> list, int i, int j)
 		Swaps a item in the list
-
-
-MapsActivity.java		
-	protected void onCreate(Bundle savedInstanceState)
-		
-	
-	
-	public void onMapReady(GoogleMap googleMap)
 
 	
 		
@@ -62,8 +54,7 @@ storeList.java
 	Object of a store
 
 ListAdapter.java
-	???
-
+	Adapter used for interface
 
 
 	
