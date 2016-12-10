@@ -1,9 +1,12 @@
 package com.example.scott.myapplication;
 
+import android.app.DownloadManager;
+import android.app.ProgressDialog;
 import android.content.pm.PackageManager;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,6 +14,8 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -27,12 +32,31 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
+
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         LocationListener {
 
     private GoogleMap mMap;
+    private List<storeList> store;
+    private TextView txtJson;
+    private String jsonHold;
+    private ProgressDialog pd;
+
     GoogleApiClient mGoogleApiClient;
     LocationRequest mLocationRequest;
     Location mLastLocation;
@@ -50,7 +74,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
 
         if(checkLocationPermission()) {
-            mMap.setMyLocationEnabled(true);
+            //mMap.setMyLocationEnabled(true);
         }
     }
 
@@ -83,6 +107,53 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
+    private void setUpZomato()
+    {
+        store = new ArrayList<>();
+        txtJson = (TextView)findViewById(R.id.myTextView);
+        txtJson.setText("https://developers.zomato.com/api/v2.1/search?q=burgers&lat=" + lat + "&lon= " + lng + "&radius=10000");
+        new JsonTask().execute("https://developers.zomato.com/api/v2.1/search?q=burgers&lat=" + lat + "&lon=" + lng + "&radius=10000");
+
+        //store.add(new storeList(num++, parts[0], parts[1], dist, parts[2], finalRating, Double.parseDouble(parts[3]), Double.parseDouble(parts[4])));
+        for(int i = 0; i < store.size(); i++)
+        {
+            mMap.addMarker(new MarkerOptions().position(new LatLng(store.get(i).getLatitude(), store.get(i).getLongitude())).title(store.get(i).getName()).snippet(store.get(i).getWebsite()).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+        }
+    }
+
+    private void sortList(List<storeList> list)
+    {
+        for(int i = 0; i < list.size(); i++)
+        {
+            for(int j = i; j < list.size(); j++)
+            {
+                if(list.get(i).getDistance() > list.get(j).getDistance())
+                {
+                    swap(list, i, j);
+                }
+            }
+        }
+    }
+
+    private double getDistance(double x1, double y1, double x2, double y2)
+    {
+        double d2r = Math.PI / 180;
+        double dLong = (x2 - x1) * d2r;
+        double dLat = (y2 - y1) * d2r;
+        double a = Math.pow(Math.sin(dLat / 2.0), 2) + Math.cos(y1 * d2r)
+                * Math.cos(y2 * d2r) * Math.pow(Math.sin(dLong / 2.0), 2);
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        double d = 6367000 * c;
+        return (d/1000);
+    }
+
+    private void swap(List<storeList> list, int i, int j)
+    {
+        storeList temp = list.get(i);
+        list.set(i, list.get(j));
+        list.set(j, temp);
+    }
+
     protected synchronized void buildGoogleApiClient() {
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
@@ -109,6 +180,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         if (mLastLocation != null) {
             lat = mLastLocation.getLatitude();
             lng = mLastLocation.getLongitude();
+            setUpZomato();
         }
     }
 
@@ -211,6 +283,108 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             // other 'case' lines to check for other permissions this app might request.
             //You can add here other case statements according to your requirement.
+        }
+    }
+
+    private class JsonTask extends AsyncTask<String, String, String> {
+
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            pd = new ProgressDialog(MapsActivity.this);
+            pd.setMessage("Please wait");
+            pd.setCancelable(false);
+            pd.show();
+        }
+
+        protected String doInBackground(String... params) {
+
+
+            HttpURLConnection connection = null;
+            BufferedReader reader = null;
+
+            try {
+                URL url = new URL(params[0]);
+                connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestProperty("Accept", " application/json");
+                connection.setRequestProperty("user-key", "3838b1542433910b14f5d93de903f769");
+                connection.connect();
+
+                InputStream stream = connection.getInputStream();
+
+                reader = new BufferedReader(new InputStreamReader(stream));
+
+                StringBuffer buffer = new StringBuffer();
+                String line = "";
+
+                while ((line = reader.readLine()) != null) {
+                    buffer.append(line+"\n");
+                    Log.d("Response: ", "> " + line);
+
+                }
+
+                return buffer.toString();
+
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                if (connection != null) {
+                    connection.disconnect();
+                }
+                try {
+                    if (reader != null) {
+                        reader.close();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+            if (pd.isShowing()){
+                pd.dismiss();
+            }
+            jsonHold = result;
+
+
+
+            //now convert jsonHold which is a string to JSON format
+            try {
+
+                JSONArray start = new JSONArray(jsonHold);
+
+                for(int i = 0; i < start.length(); i++)
+                {
+                    try {
+                        JSONObject obj = start.getJSONObject(i);
+                        Log.e("My App", "Converted One");
+                    } catch (Throwable t) {
+                        try {
+                            JSONArray arr = start.getJSONArray(i);
+                            Log.e("My App", "Converted One");
+                        } catch (Throwable yt) {
+                            Log.e("My App", "Could not parse TO ARRAY");
+                        }
+                        Log.e("My App", "Could not parse TO JSON OBJ");
+                    }
+                }
+            } catch (Throwable t) {
+                Log.e("My App", "Could not parse malformed JSON");
+            }
+
+            //grab desired fields
+
+            //output to JSON file
+
+            //push into stores list if we want to use inside app
+
         }
     }
 }
