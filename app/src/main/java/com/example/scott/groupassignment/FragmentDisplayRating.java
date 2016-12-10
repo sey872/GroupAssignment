@@ -16,9 +16,12 @@ import java.util.List;
 
 /**
  * Created by Scott on 5/5/2016.
- * For CSCI342 Assignment 2
+ * FBAS
  */
 public class FragmentDisplayRating extends Fragment {
+
+    private int finalScore;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_rate_store, container, false);
@@ -26,21 +29,21 @@ public class FragmentDisplayRating extends Fragment {
         v.setClickable(true);
         final List<Button> star = new ArrayList<>();
 
+        //Creates 5 star buttons
         star.add((Button) v.findViewById(R.id.onestar));
         star.add((Button) v.findViewById(R.id.twostar));
         star.add((Button) v.findViewById(R.id.threestar));
         star.add((Button) v.findViewById(R.id.fourstar));
         star.add((Button) v.findViewById(R.id.fivestar));
 
-        final int[] rating = {0};
         for (int i = 0; i < star.size(); i++) {
             final int val = i;
             star.get(i).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     for (int j = 0; j < star.size(); j++) {
-                        rating[0] = j;
                         if (j <= val) {
+                            finalScore = val+1;
                             star.get(j).setBackground(getResources().getDrawable(R.drawable.xbuttonback));
                         } else {
                             star.get(j).setBackground(getResources().getDrawable(R.drawable.starbuttonback));
@@ -64,7 +67,7 @@ public class FragmentDisplayRating extends Fragment {
         rateStore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Thank you for your rating of: " + String.valueOf(rating[0]), Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "Thank you for your rating of: " + String.valueOf(finalScore), Toast.LENGTH_LONG).show();
                 getFragmentManager().popBackStack();
             }
         });
