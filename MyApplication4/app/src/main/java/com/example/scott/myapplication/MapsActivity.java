@@ -53,9 +53,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private GoogleMap mMap;
     private List<storeList> store;
+    //***************************************the variables you need
     private TextView txtJson;
     private String jsonHold;
     private ProgressDialog pd;
+    //***************************************
 
     GoogleApiClient mGoogleApiClient;
     LocationRequest mLocationRequest;
@@ -110,9 +112,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private void setUpZomato()
     {
         store = new ArrayList<>();
+        //************************************************************************************* Just hard cord your lat/long
+        //this uses a textView isnide an xml up to you if you want it
         txtJson = (TextView)findViewById(R.id.myTextView);
         txtJson.setText("https://developers.zomato.com/api/v2.1/search?q=burgers&lat=" + lat + "&lon= " + lng + "&radius=10000");
         new JsonTask().execute("https://developers.zomato.com/api/v2.1/search?q=burgers&lat=" + lat + "&lon=" + lng + "&radius=10000");
+        //**********************************************************************************************************************
 
         //store.add(new storeList(num++, parts[0], parts[1], dist, parts[2], finalRating, Double.parseDouble(parts[3]), Double.parseDouble(parts[4])));
         for(int i = 0; i < store.size(); i++)
@@ -286,12 +291,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
+    //****************************************************Need this class
+
     private class JsonTask extends AsyncTask<String, String, String> {
 
         protected void onPreExecute() {
             super.onPreExecute();
 
-            pd = new ProgressDialog(MapsActivity.this);
+            pd = new ProgressDialog(MapsActivity.this); //*************************************************Probs MainActivity.this
             pd.setMessage("Please wait");
             pd.setCancelable(false);
             pd.show();
